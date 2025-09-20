@@ -1,10 +1,10 @@
 [Powerview.ps1](https://github.com/PowerShellMafia/PowerSploit/tree/master/Recon)
-### Import Powerview.ps1###
+### Import Powerview.ps1 ###
 Powershell -ep bypass
 
 Import-Module .\Powerview.ps1  
 
-### Enumeration###
+### Enumeration ###
 Get-Domain
 Get-Domaincomputer
 Get-DomainGroup
