@@ -13,8 +13,8 @@ Get-NetUser
 Get-Netuser --Properties name
 Get-Netuser --Properties name, pwdlastset
 
-##AES-Roastable###
-##出現DONT_REQ_PREAUTH的就是可以AES-Roasting的##
+## AES-Roastable ###
+## 出現DONT_REQ_PREAUTH的就是可以AES-Roasting的 ##
 Get-Netuser -properties name,Useraccountcontrol
 
 
