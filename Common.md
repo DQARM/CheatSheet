@@ -5,11 +5,10 @@ https://blog.stevenyu.tw/2022/06/10/%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90-cpent-%
 nmap -sS -n -p 445 --script smb-protocls 192.168.1.1   
 
 ## AD Reacon ##  
-
-# Windows #  
+# Commands on Windows #  
 nbtstat -A (IP)  
-adreacon  
-# Linux #  
+adreacon.ps1  
+# Commands on Linux #  
 enum4linux-ng -A  
 
 ## Reacon SMB ##  
