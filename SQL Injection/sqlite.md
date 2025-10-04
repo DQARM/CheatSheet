@@ -7,7 +7,7 @@
 ## 不建議使用  
 井字號  
 
-# 系統表單:  
+# 系統預設內建表單:  
 ## sqlite_master  
 ## sqlite_schema  
 
