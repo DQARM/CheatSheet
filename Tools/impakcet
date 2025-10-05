@@ -1,1 +1,3 @@
+impacket-smbexec user@IP
+impacket-psexec user@IP
 
