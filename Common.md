@@ -86,6 +86,11 @@ john --wordlist=/usr/share/wordlists/rockyou.txt <Filename>
 ``` whatweb -v 192.168.1.1 ```   
 ``` whatweb --log-verbose=log.txt 192.168.1.1 ```   
 
+# Web Attack  
+## LFI  
+## RFI  
+## CSRF  
+## XSS  
 
 # SQLi  
 ## 手動確認漏洞存在   
@@ -120,7 +125,7 @@ john --wordlist=/usr/share/wordlists/rockyou.txt <Filename>
 
 
 # TTY
-## Generator  
+## Reverse Shell Generator  
 ``` https://www.revshells.com/ ```  
 ## Python   
 ``` python3 -c 'import pty; pty.spawn("/bin/sh")' ```  
@@ -131,6 +136,15 @@ http://192.168.1.1/wp-content/themes/twentyfifteen/404.php
 # Open Source Target   
 ## http://testphp.vulnweb.com/  
 
+# Pivoting  
+## Chisel  
+## Ligolo-ng  
+## Datapipe  
+## Socat  
+
 # host檔案  
 ## Linux: \etc\host  
 ## Windows: C:\Windows\System32\drivers\etc\hosts  
+
+# Credential dump  
+##  sudo impacket-secretdump htb/kali:kali123@10.10.10.161
