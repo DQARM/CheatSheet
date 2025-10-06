@@ -161,4 +161,11 @@ find / -perm 4000
 # Web REF  
 ## exploit db  
 https://www.exploit-db.com/  
-## PayallThins
+## Payloads All The Things  
+https://swisskyrepo.github.io/PayloadsAllTheThings/    
+https://github.com/swisskyrepo/PayloadsAllTheThings  
+## Internal All The Things  
+https://swisskyrepo.github.io/InternalAllTheThings/  
+## Hardware All The Things
+https://swisskyrepo.github.io/HardwareAllTheThings/  
+
