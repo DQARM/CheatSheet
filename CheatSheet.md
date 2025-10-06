@@ -5,6 +5,11 @@ https://blog.stevenyu.tw/2022/06/10/%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90-cpent-%
 nmap -sS -n -p 445 --script smb-protocls 192.168.1.1   
 nmap --script http-shellshock --script-args uri=/cbi-bin/keygen,cmd=ls 192.168.1.1
 
+# Rustscan  
+``` rustscan -u 5000 -t 7000 -a 192.168.1.1 ```  
+``` rustscan -u 5000 -t 7000 --script none -a 192.168.1.1 ```  
+``` rustscan -u 5000 -t 7000 none -a 192.168.1.1 -- -Pn -sVC -OA host_1```  
+
 # AD Reacon   
 ## Commands on Windows   
 nbtstat -A (IP)  
