@@ -1,4 +1,0 @@
-# Host Discovery
-``` sudo nmap -n -sn -PS22,80,445,3389 192.168.0.1-254 -oG ip_scan.txt ```  
-``` grep Up ip_scan.txt | cut -d" " -f2 ```  
-``` for i in {1..254}; do (ping -c 1 192.168.1.$i | grep "bytes from" &); done ```  
