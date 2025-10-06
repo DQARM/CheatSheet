@@ -136,8 +136,9 @@ john --wordlist=/usr/share/wordlists/rockyou.txt <Filename>
 http://192.168.1.1/wp-content/themes/twentyfifteen/404.php  
 
 
-# Open Source Target   
+# Internet Open Target/Victim  
 ## http://testphp.vulnweb.com/  
+## http://scanme.nmap.org   
 
 # Pivoting  
 ## Chisel  
