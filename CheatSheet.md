@@ -4,6 +4,7 @@ https://blog.stevenyu.tw/2022/06/10/%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90-cpent-%
 # NMAP Reacon   
 nmap -sS -n -p 445 --script smb-protocls 192.168.1.1   
 nmap --script http-shellshock --script-args uri=/cbi-bin/keygen,cmd=ls 192.168.1.1
+nmap -sV --script=vuln 192.168.1.1
 
 # Rustscan  
 ``` rustscan -u 5000 -t 7000 -a 192.168.1.1 ```  
@@ -14,7 +15,7 @@ nmap --script http-shellshock --script-args uri=/cbi-bin/keygen,cmd=ls 192.168.1
 ## Commands on Windows   
 ``` nbtstat -A (IP)  ```  
 ``` adreacon.ps1  ```  
-### Open Ports  
+## Open Ports  
 ``` netstat -aof | findstr 3389 ```  
 ## Commands on Linux   
 ``` enum4linux-ng -A  ```  
@@ -76,7 +77,8 @@ search /bin/sh
 https://github.com/briskets/CVE-2021-3493  
 ## Shellshock  
 CVE-2014-6271  
-
+## sudo -l  
+```sudo -l ``` 
 # Firmware Analyze  
 ## binwalk  
 binwalk -e --signature --term (Filename)  
@@ -181,8 +183,10 @@ http://192.168.1.1/wp-content/themes/twentyfifteen/404.php
 # 找檔案  
 ## Windows  
 ## Linux  
-find / -iname <string> -type f
-find / -perm 4000
+find / -iname <string> -type f  
+find / -type f -perm -4000 2>/dev/null  
+find / -type f -perm -4000 -user root -ls 2>/dev/null  
+find / -type f -perm -2000 2>/dev/null  
 
 # Web REF  
 ## exploit db  
@@ -196,6 +200,12 @@ https://swisskyrepo.github.io/InternalAllTheThings/
 https://swisskyrepo.github.io/HardwareAllTheThings/  
 
 # SNMP  
-## onesixtyone  
-``` onesixtyone 192.168.1.1 public ```
-``` onesixtyone 192.168.1.1 private ```
+## onesixtyone    
+``` onesixtyone 192.168.1.1 public ```  
+``` onesixtyone 192.168.1.1 private ```  
+# IOT  
+## DICOM  
+### Port 4242  
+## Firmware Analysis  
+```file <filename> ```  
+```sudo hexdump -c firmeware.bin | more ```
