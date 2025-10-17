@@ -6,7 +6,7 @@ nmap -sS -n -p 445 --script smb-protocls 192.168.1.1
 nmap --script http-shellshock --script-args uri=/cbi-bin/keygen,cmd=ls 192.168.1.1
 nmap -sV --script=vuln 192.168.1.1
 
-# Rustscan  
+# Rustscan, Scan open ports
 ``` rustscan -u 5000 -t 7000 -a 192.168.1.1 ```  
 ``` rustscan -u 5000 -t 7000 --script none -a 192.168.1.1 ```  
 ``` rustscan -u 5000 -t 7000 none -a 192.168.1.1 -- -Pn -sVC -OA host_1 ```  
