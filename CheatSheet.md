@@ -53,6 +53,8 @@ evil-winrm
 ``` reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f ```  
 ``` net start termservice ```  
 ``` netsh advfirewall firewall set rule group="Remote Desktop" new enable=yes ```  
+``` netsh advfirewall firewall set rule name="Remote Desktop - User Mode (TCP-In)" new enable=yes ```  
+``` netsh advfirewall firewall set rule name="Remote Desktop - User Mode (UDP-In)" new enable=yes ```  
 ### Powershell  
 ``` Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server" -Name fDenyTSConnections -Value 0```  
 ## psexec  
