@@ -243,6 +243,9 @@ https://swisskyrepo.github.io/HardwareAllTheThings/
 ## SSH -D  
 ```ssh -D [本地端埠號] [使用者]@[遠端主機] ```
 
+# Peass  
+https://github.com/peass-ng/PEASS-ng  
+
 # SNMP  
 ## onesixtyone    
 ``` onesixtyone 192.168.1.1 public ```  
