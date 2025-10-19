@@ -219,6 +219,10 @@ https://swisskyrepo.github.io/InternalAllTheThings/
 ## Hardware All The Things
 https://swisskyrepo.github.io/HardwareAllTheThings/  
 
+# Pivoting  
+## sshuttle  
+```sshuttle -r user@192.168.1.1 10.0.1.1 ```  
+
 # SNMP  
 ## onesixtyone    
 ``` onesixtyone 192.168.1.1 public ```  
