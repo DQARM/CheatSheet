@@ -198,12 +198,13 @@ AT 10.129.202.64
 
 ## Ligolo-ng  
 ## Datapipe  
-```wget wget https://raw.githubusercontent.com/bovine/datapipe/master/datapipe.c  
-gcc datapipe```  
+```wget wget https://raw.githubusercontent.com/bovine/datapipe/master/datapipe.c  ```  
+``` gcc datapipe```  
 
 ## Socat  
 ```socat udp-listen:3389 udp:172.16.5.19:3389```  
 ```socat tcp-listen:3389 tcp:172.16.5.19:3389```  
+
 ## Sshuttle  
 
 # host檔案  
