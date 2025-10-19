@@ -198,7 +198,7 @@ AT 10.129.202.64
 
 ## Ligolo-ng  
 ## Datapipe  
-```wget wget https://raw.githubusercontent.com/bovine/datapipe/master/datapipe.c
+```wget wget https://raw.githubusercontent.com/bovine/datapipe/master/datapipe.c  
 gcc datapipe```  
 
 ## Socat  
