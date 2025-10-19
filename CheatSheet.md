@@ -189,9 +189,17 @@ http://192.168.1.1/wp-content/themes/twentyfifteen/404.php
 
 # Pivoting  
 ## Chisel  
+### Chisel Server
+```sudo chisel server -p 80 --reverse -v```  
+### Chisel Client  
+Topology: 10.10.14.22 <--> 10.129.202.64 <--> 172.16.5.19  
+AT 10.129.202.64  
+```chisel client 10.10.14.22:80 R:3389:172.16.5.19:3389```  
+
 ## Ligolo-ng  
 ## Datapipe  
 ## Socat  
+## Sshuttle  
 
 # host檔案  
 ## Linux: \etc\host  
