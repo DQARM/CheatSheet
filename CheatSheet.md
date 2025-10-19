@@ -97,6 +97,7 @@ search /bin/sh
 https://github.com/briskets/CVE-2021-3493  
 https://github.com/chenaotian/CVE-2023-0386/blob/main/exp.c  
 ``` gcc -static -O2 fuse.c -o efuse -D_FILE_OFFSET_BITS=64 -lpthread -lrt -ldl -lz -lfuse ```
+```sudo apt install libfuse-dev ```
 ## Shellshock  
 CVE-2014-6271  
 ## sudo -l  
