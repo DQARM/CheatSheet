@@ -4,7 +4,7 @@
 
 ## SSH Local Port Forwarding  
 
-## Client
+## Client  
 
 ```ssh -L *:3306:172.16.5.19:3306 ubuntu@10.129.247.87```  
 
@@ -25,7 +25,7 @@
 ## RDP  
 ```xfreerdp3 /v:10.129.247.87 /u:victor /p:'pass@123'```  
 
-## Client Snapshot
+## Client Snapshot  
 
 ---  
 
@@ -37,6 +37,5 @@
 ## RDP  
 ```proxychains xfreerdp3 /v:172.16.5.19 /u:victor /p:'pass@123'```  
 
-## Client Snapshot
+## Client Snapshot  
 
-  
