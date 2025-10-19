@@ -4,14 +4,14 @@ https://github.com/nicocha30/ligolo-ng
 ## Topology  
 10.10.14.22 <--> 10.129.247.87 <--> 172.16.5.19  
 
-# Server Step 1
+## Server Step 1
 ```
 sudo ip tuntap add user $(whoami) mode tun ligolo  
 sudo ip link set ligolo up  
 sudo ./proxy -selfcert -laddr 0.0.0.0:443
 ```
 
-# Client Step 1  
+## Client Step 1  
 ```
 /agent -connect 10.10.14.22:443 -ignore-cert  
 ```
