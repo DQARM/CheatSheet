@@ -1,6 +1,9 @@
 # 先決條件  
 SSH Server端有root權限  
 
+## Topology  
+10.10.14.22 <--> 10.129.247.87 <--> 172.16.5.19  
+
 ## Server  
 ```sshuttle -r forwarder Target ```  
 ```sshuttle -r admin@192.168.1.1 10.0.1.1 ```  
