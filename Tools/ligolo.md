@@ -1,6 +1,9 @@
 # Download  
 https://github.com/nicocha30/ligolo-ng  
 
+## Topology  
+10.10.14.22 <--> 10.129.247.87 <--> 172.16.5.19  
+
 # Server Step 1
 ```
 sudo ip tuntap add user $(whoami) mode tun ligolo  
@@ -18,6 +21,8 @@ sudo ./proxy -selfcert -laddr 0.0.0.0:443
 session
 autoroute  
 ```
+## RDP  
+```xfreerdp3 /v:172.16.5.19 /u:victor /p:'pass@123'```  
 
 ## Snapshot for Server  
 <img width="1338" height="476" alt="image" src="https://github.com/user-attachments/assets/8870ed59-ad12-4f6a-bef9-d216579c5118" />  
