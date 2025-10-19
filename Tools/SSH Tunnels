@@ -9,7 +9,7 @@
 ```ssh -L *:3306:172.16.5.19:3306 ubuntu@10.129.247.87```  
 
 ## RDP  
-```xfreerdp3 /v:localhost /u:victor /p:'pass@123'```  
+```xfreerdp3 /v:localhost /u:victor /p:'pass@123' ```  
 
 ## Client Snapshot  
 
@@ -23,7 +23,7 @@
 ```ssh -R *:3306:172.16.5.19:3306 ubuntu@10.129.247.87 ```  
 
 ## RDP  
-```xfreerdp3 /v:10.129.247.87 /u:victor /p:'pass@123'```  
+```xfreerdp3 /v:10.129.247.87 /u:victor /p:'pass@123' ```  
 
 ## Client Snapshot  
 
@@ -32,10 +32,10 @@
 ## SSH Dynamic Port Forwarding  
 
 ## Client 
-```ssh -D  ubuntu@10.129.202.64 ```  
+```ssh -D 9050 ubuntu@10.129.247.87 ```  
 
 ## RDP  
-```proxychains xfreerdp3 /v:172.16.5.19 /u:victor /p:'pass@123'```  
+```proxychains xfreerdp3 /v:172.16.5.19 /u:victor /p:'pass@123' ```  
 
 ## Client Snapshot  
 
