@@ -252,7 +252,19 @@ https://github.com/peass-ng/PEASS-ng
 # SNMP  
 ## onesixtyone    
 ``` onesixtyone 192.168.1.1 public ```  
-``` onesixtyone 192.168.1.1 private ```  
+``` onesixtyone 192.168.1.1 private ```
+
+# PowerShell  
+## PowerShell Base64 Encode  
+```$Text = 'sting' ```  
+```$Bytes = [System.Text.Encoding]::UTF8.GetBytes($Text)```  
+```$Base64 = [Convert]::ToBase64String($Bytes) ```  
+```$Base64 ```  
+## PowerShell Base64 Decode  
+```$Base64 = 'Base64 String' ```  
+```$Bytes = [Convert]::FromBase64String($Base64)```  
+```$Text = [System.Text.Encoding]::UTF8.GetString($Bytes)```  
+```$Text```  
 # IOT  
 ## DICOM  
 ### Port 4242  
