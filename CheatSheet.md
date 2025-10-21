@@ -221,7 +221,8 @@ AT 10.129.202.64
 ##  sudo impacket-secretdump htb/kali:kali123@10.10.10.161
 
 # 找檔案  
-## Windows  
+## Windows
+```'Get-ChildItem -Path C:\ -Recurse -Filter "secret.txt" -ErrorAction SilentlyContinue'```  
 ## Linux  
 find / -iname <string> -type f  
 find / -type f -perm -4000 2>/dev/null  
